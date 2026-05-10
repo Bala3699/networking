@@ -1,135 +1,199 @@
 
-# 🖧 Packet Tracer – Realistic Structured Cabling in the Physical Workspace
+# 🖧 Packet Tracer – Create Realistic Structured Cabling in the Physical Workspace and Cabling Devices in a Rack
 
-## 📌 Overview
-This project demonstrates how to create a realistic structured cabling environment using Cisco Packet Tracer. The lab simulates how office devices are connected through wall mounts, patch panels, and switches inside a wiring closet.
+![Cisco](https://img.shields.io/badge/Cisco-PacketTracer-blue)
+![Networking](https://img.shields.io/badge/Networking-Structured%20Cabling-green)
+![Status](https://img.shields.io/badge/Project-Completed-success)
 
-The project includes:
+---
 
-- Installing a Patch Panel
-- Adding Wall Mounts
-- Connecting Switch Ports to Patch Panel
-- Connecting Wall Mounts to Patch Panel
-- Connecting PCs and Printer to the Network
-- DHCP IP Address Assignment
-- Testing Connectivity using a Web Browser
+# 📌 Project Overview
+
+This project demonstrates how to build a realistic enterprise structured cabling environment using Cisco Packet Tracer.
+
+The lab simulates a real office infrastructure where:
+
+- Network devices are connected using structured cabling
+- Patch panels are installed inside a wiring closet
+- Wall mounts are used for office connectivity
+- PCs and printers receive automatic IP addresses through DHCP
+- End devices communicate with the office server
+
+This project provides hands-on experience in physical networking, cable organization, and enterprise network deployment.
 
 ---
 
 # 🎯 Objectives
 
-- Understand structured cabling concepts
-- Learn how patch panels work
-- Learn wall mount and punchdown connections
-- Simulate enterprise office network cabling
-- Configure realistic office infrastructure
+The main objectives of this project are:
+
+- Install and configure a Patch Panel
+- Create structured cabling inside a wiring closet
+- Add and configure Wall Mounts
+- Connect network devices using Copper Straight-Through cables
+- Understand Jack Ports and Punchdown Ports
+- Simulate realistic office network infrastructure
+- Test connectivity using DHCP and Web Browser access
 
 ---
 
-# 🏢 Network Topology
+# 🧠 Understanding Structured Cabling
 
-```text
-Office Devices
-      ↓
-Wall Mounts
-      ↓
-Patch Panel
-      ↓
-Switch
-      ↓
-Server
+Structured cabling is a standardized way of organizing and managing network cables in offices and enterprise environments.
+
+Instead of directly connecting PCs to switches, enterprise networks use:
+
+```text id="yoky9t"
+PC → Wall Mount → Patch Panel → Switch → Server
 ````
 
----
+This improves:
 
-# 🛠 Tools Used
-
-| Tool                          | Purpose                 |
-| ----------------------------- | ----------------------- |
-| Cisco Packet Tracer           | Network Simulation      |
-| Copper Straight-Through Cable | Device Connections      |
-| Patch Panel                   | Cable Management        |
-| Wall Mount                    | End Device Connectivity |
+* Cable organization
+* Maintenance
+* Scalability
+* Troubleshooting
+* Network reliability
 
 ---
 
-# 🧱 Components Used
+# 🛠 Software Used
 
-| Device      | Quantity |
-| ----------- | -------- |
-| Patch Panel | 1        |
-| Wall Mounts | 2        |
-| Switch      | 1        |
-| PCs         | 2        |
-| Printer     | 1        |
-| Server      | 1        |
+| Software                 | Purpose                     |
+| ------------------------ | --------------------------- |
+| Cisco Packet Tracer      | Network Simulation          |
+| Structured Cabling Tools | Physical Cabling Simulation |
 
 ---
 
-# 📂 Part 1 – Installing the Patch Panel
+# 🧱 Devices and Components Used
 
-## Step 1: Open Wiring Closet
+| Device                     | Quantity |
+| -------------------------- | -------- |
+| Office Switch (Office-SW1) | 1        |
+| Patch Panel                | 1        |
+| Wall Mounts                | 2        |
+| PCs                        | 2        |
+| Printer                    | 1        |
+| Server                     | 1        |
 
-* Click the Equipment Cabinet
+---
 
-## Step 2: Add Patch Panel
+# 🖼 Network Architecture
+
+```text id="pjjm7j"
+                 ┌─────────────┐
+                 │ Office-User │
+                 └──────┬──────┘
+                        │
+                  Wall Mount1
+                        │
+                        │
+┌─────────────┐   Patch Panel0   ┌─────────────┐
+│ Office-Admin│───────┬──────────│  Printer0   │
+└──────┬──────┘       │          └─────────────┘
+       │              │
+  Wall Mount0         │
+                      │
+                Office-SW1
+                      │
+                Office Server
+```
+
+---
+
+# 📂 Project Workflow
+
+The project is divided into 3 major parts:
+
+| Part   | Description                             |
+| ------ | --------------------------------------- |
+| Part 1 | Install Patch Panel                     |
+| Part 2 | Install Wall Mount0 and connect devices |
+| Part 3 | Add Wall Mount1 and additional devices  |
+
+---
+
+# 🧩 Part 1 – Installing the Patch Panel
+
+## Step 1 – Open the Wiring Closet
+
+Click:
+
+```text id="gm69hn"
+Equipment Cabinet
+```
+
+This opens the simulated wiring closet.
+
+---
+
+## Step 2 – Add Patch Panel
 
 Navigate to:
 
-```text
+```text id="ggr0hp"
 Connections → Structured Cabling → Copper Patch Panel
 ```
 
-Place the patch panel inside the rack.
+Place the Patch Panel inside the rack.
 
-## Step 3: Rename Patch Panel
+---
 
-Rename the device:
+## Step 3 – Rename the Patch Panel
 
-```text
+Rename the device exactly as:
+
+```text id="wpdg55"
 Patch Panel0
 ```
+
+⚠️ Important for grading.
 
 ---
 
 # 🔌 Part 2 – Connecting Switch to Patch Panel
 
-Use Copper Straight-Through cables.
+Use:
 
-| Switch Port | Patch Panel Port |
-| ----------- | ---------------- |
-| G1/0/13     | Jack13           |
-| G1/0/14     | Jack14           |
-| G1/0/15     | Jack15           |
-| G1/0/16     | Jack16           |
-| G1/0/21     | Jack21           |
-| G1/0/22     | Jack22           |
-| G1/0/23     | Jack23           |
-| G1/0/24     | Jack24           |
+```text id="6v1mvr"
+Copper Straight-Through Cable
+```
 
 ---
 
-# 🧱 Part 3 – Adding Wall Mount0
+## Switch to Patch Panel Connections
 
-## Install Wall Mount
+| Office-SW1 Port | Patch Panel0 Port |
+| --------------- | ----------------- |
+| G1/0/13         | Jack13            |
+| G1/0/14         | Jack14            |
+| G1/0/15         | Jack15            |
+| G1/0/16         | Jack16            |
+
+---
+
+# 🧱 Part 3 – Installing Wall Mount0
+
+## Step 1 – Add Wall Mount
 
 Navigate to:
 
-```text
+```text id="r93avk"
 Connections → Structured Cabling → Copper Wall Mount
 ```
 
-Place near the Equipment Cabinet.
+Place the wall mount next to the Equipment Cabinet.
 
 Rename it:
 
-```text
+```text id="yjnkhm"
 Wall Mount0
 ```
 
 ---
 
-# 🔗 Connect Wall Mount0 to Patch Panel
+# 🔗 Connecting Wall Mount0 to Patch Panel0
 
 | Wall Mount0 | Patch Panel0 |
 | ----------- | ------------ |
@@ -140,29 +204,37 @@ Wall Mount0
 
 ---
 
-# 💻 Connect End Devices
+# 💻 Connecting End Devices
 
-Connect using Copper Straight-Through cables:
+Use Copper Straight-Through cables to connect:
 
-* Office-Admin PC → Wall Mount0
-* Printer0 → Wall Mount0
+| Device          | Connect To  |
+| --------------- | ----------- |
+| Office-Admin PC | Wall Mount0 |
+| Printer0        | Wall Mount0 |
 
 ---
 
-# 🌐 DHCP and Connectivity Test
+# 🌐 DHCP and Connectivity Verification
 
-After waiting for DHCP assignment:
+After connecting devices:
 
-1. Open Office-Admin PC
-2. Navigate to:
+1. Wait 30–60 seconds
+2. Devices receive IP automatically through DHCP
 
-```text
-Desktop → Web Browser
+---
+
+## Testing Connectivity
+
+Open:
+
+```text id="5qt0gi"
+Office-Admin → Desktop → Web Browser
 ```
 
-3. Enter:
+Enter:
 
-```text
+```text id="y62c0v"
 office.srv
 ```
 
@@ -170,19 +242,19 @@ If the page loads successfully, the network is functioning correctly.
 
 ---
 
-# 🧱 Part 4 – Adding Wall Mount1
+# 🧱 Part 4 – Installing Wall Mount1
 
-Install another wall mount near the window.
+Add another wall mount near the window.
 
-Rename:
+Rename it:
 
-```text
+```text id="z1d97o"
 Wall Mount1
 ```
 
 ---
 
-# 🔗 Connect Wall Mount1 to Patch Panel
+# 🔗 Connecting Wall Mount1 to Patch Panel0
 
 | Wall Mount1 | Patch Panel0 |
 | ----------- | ------------ |
@@ -193,11 +265,22 @@ Wall Mount1
 
 ---
 
-# 💻 Connect Office-User PC
+# 🔌 Additional Switch Connections
+
+| Office-SW1 Port | Patch Panel0 Port |
+| --------------- | ----------------- |
+| G1/0/21         | Jack21            |
+| G1/0/22         | Jack22            |
+| G1/0/23         | Jack23            |
+| G1/0/24         | Jack24            |
+
+---
+
+# 💻 Connecting Office-User PC
 
 Connect:
 
-```text
+```text id="fqkgcy"
 Office-User PC → Wall Mount1
 ```
 
@@ -205,27 +288,27 @@ using Copper Straight-Through cable.
 
 ---
 
-# 🧪 Verification
+# 🧪 Final Verification
 
 Verify:
 
 * DHCP IP Assignment
-* Browser Connectivity
-* Successful Access to:
+* Network Connectivity
+* Browser Access to:
 
-```text
+```text id="cq5f80"
 office.srv
 ```
 
 ---
 
-# ⚠️ Common Mistakes
+# ⚠️ Common Mistakes and Troubleshooting
 
-## ❌ Mixing Jack and Punchdown Ports
+## ❌ Mistake 1 – Mixing Jack and Punchdown Ports
 
 ### Correct Usage
 
-| Purpose                | Use             |
+| Connection Type        | Port Type       |
 | ---------------------- | --------------- |
 | Switch Connections     | Jack Ports      |
 | Wall Mount Connections | Punchdown Ports |
@@ -234,7 +317,7 @@ office.srv
 
 ## ❌ Wrong Example
 
-```text
+```text id="m2uxm6"
 Punchdown1 → Jack13
 ```
 
@@ -242,59 +325,99 @@ Punchdown1 → Jack13
 
 ## ✅ Correct Example
 
-```text
+```text id="0ql4eu"
 Punchdown1 → Punchdown13
+```
+
+---
+
+# ❌ Mistake 2 – Wrong Cable Type
+
+Always use:
+
+```text id="pbm5h7"
+Copper Straight-Through Cable
+```
+
+---
+
+# ❌ Mistake 3 – DHCP Not Working
+
+If devices do not get IP addresses:
+
+1. Open PC
+2. Navigate to:
+
+```text id="7a7dn4"
+Desktop → IP Configuration
+```
+
+3. Click:
+
+```text id="v6p1yy"
+DHCP
 ```
 
 ---
 
 # 🧠 Key Learning Outcomes
 
-* Understanding enterprise structured cabling
-* Learning patch panel architecture
-* Real-world office networking simulation
-* DHCP-based IP allocation
-* Physical network design principles
+This project helped in understanding:
+
+* Enterprise structured cabling
+* Patch panel deployment
+* Wall mount configuration
+* Physical network infrastructure
+* DHCP networking
+* Enterprise cable organization
+* Real-world office network architecture
 
 ---
 
-# 📸 Suggested Screenshots for GitHub
+# 📸 Recommended GitHub Screenshots
 
-Add screenshots of:
+Include screenshots of:
 
-* Final topology
+* Final network topology
 * Wiring closet
-* Patch panel connections
-* Wall mounts
-* Successful browser test
+* Patch Panel configuration
+* Wall Mount connections
+* Successful browser connectivity
 * Activity completion score
 
 ---
 
 # 🚀 Future Improvements
 
-* Add VLAN configuration
-* Add Router for Internet simulation
-* Implement Network Security
-* Configure Access Control Lists
-* Add Wireless Devices
+Possible enhancements include:
+
+* VLAN segmentation
+* Router configuration
+* Wireless network integration
+* Firewall deployment
+* Intrusion Detection Systems
+* Network monitoring tools
+* Access Control Lists (ACLs)
 
 ---
 
 # ✅ Final Result
 
-Successfully created a realistic structured cabling infrastructure using Cisco Packet Tracer with:
+Successfully implemented a realistic structured cabling infrastructure in Cisco Packet Tracer with:
 
-* Proper Patch Panel Configuration
-* Dual Wall Mount Setup
-* Functional DHCP Networking
-* Successful Web Connectivity
+* 1 Patch Panel
+* 2 Wall Mounts
+* Multiple structured cable connections
+* DHCP-based IP allocation
+* Successful web connectivity
+* Enterprise-style cable organization
 
 ---
 
 # 👨‍💻 Author
 
-Balamutugan
-B.Tech Computer Science and Engineering (Cybersecurity Enthusiast)
+## Balamutugan
 
+B.Tech Computer Science and Engineering
+Cybersecurity & Networking Enthusiast
 
